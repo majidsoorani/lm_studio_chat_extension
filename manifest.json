@@ -1,27 +1,32 @@
 {
-    "manifest_version": 3,
-    "name": "LM Studio Chat",
-    "version": "1.0",
-    "description": "Chat with your local LM Studio model.",
-    "action": {
-      "default_popup": "index.html",
-      "default_icon": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
-      }
-    },
-    "permissions": [
-      "activeTab",
-      "storage"
-    ],
-    "host_permissions": [
-      "http://127.0.0.1:1234/*"
-    ],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_security_policy": {
-      "extension_pages": "script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'self'"
+  "manifest_version": 3,
+  "name": "LM Studio Chat",
+  "version": "0.1.0",
+  "description": "A Chrome extension to chat with your local LLMs via LM Studio.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:1234/*"
+  ],
+  "action": {
+    "default_popup": "public/index.html",
+    "default_icon": {
+      "16": "public/icons/icon16.png",
+      "48": "public/icons/icon48.png",
+      "128": "public/icons/icon128.png"
     }
-}  
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "public/icons/icon16.png",
+    "48": "public/icons/icon48.png",
+    "128": "public/icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'self'"
+  }
+}
